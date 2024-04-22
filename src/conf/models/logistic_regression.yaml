@@ -1,0 +1,13 @@
+name: logistic_regression
+param:
+  iris:
+    C: 1.0
+    penality: l2
+
+  wine:
+    C: 1.0
+    penality: l2
+
+  california:
+
+
