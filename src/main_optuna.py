@@ -8,6 +8,13 @@ from datasets.dataset_loader import DatasetLoader
 from models.model_selector import ModelSelector
 
 def get_logger(config):
+    """ Build a logger object to log the application
+
+    :param config: Configuration object
+    :type config: omegaconf.DictConfig
+    :return: Logger object
+    :rtype: logging.Logger
+    """
     os.makedirs(config.log_path, exist_ok=True)
 
     logger = logging.getLogger(__name__)
@@ -49,7 +56,9 @@ def main(config: omegaconf.DictConfig) -> None:
     # Save the configuration used to run the model
     with open(Path(config.log_path) / "config.yaml", "w") as f:
         omegaconf.OmegaConf.save(config, f)
-        
+
+    # We return the score for Optuna to optimize
+    return score
 
 
 if __name__ == "__main__":

@@ -39,7 +39,7 @@ class ModelSelector:
         assert self.config.datasets.task == "classification", "Logistic regression is only for classification task"
         penality = self.config.models.param.penality
         C = self.config.models.param.C
-        return LogisticRegression(penalty=penality, C=C)
+        return LogisticRegression(penalty=penality, C=C, max_iter=1000)
     
     def get_random_forest(self):
         """Get random forest model

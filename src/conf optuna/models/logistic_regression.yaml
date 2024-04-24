@@ -1,0 +1,13 @@
+name: logistic_regression
+param:
+  iris:
+    C: 1.0
+    penality: l2
+
+  wine:
+    C: range(0.1, 1.0, 0.1)
+    penality: choice(['l1', 'l2'])
+
+  california:
+
+

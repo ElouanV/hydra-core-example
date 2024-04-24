@@ -2,3 +2,4 @@ log/
 venv/
 .hydra/
 __pycache__/
+src/multirun/

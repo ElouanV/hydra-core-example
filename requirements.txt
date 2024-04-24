@@ -3,3 +3,5 @@ xgboost
 scikit-learn
 tqdm
 pandas
+optuna
+hydra-optuna-sweeper
