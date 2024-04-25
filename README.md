@@ -7,14 +7,18 @@ For this example:
 
 `pip install -r requirements.txt`
 ## Run examples
-```python main.py models=logistic_regression datasets=wine```
+```sh
+python main.py models=logistic_regression datasets=wine
+```
 
 will run the script with overriding the parameter `models` and the parameter `datasets`
 
 
 
 
-```python main.py --multirun models=logistic_regression datasets=wine 'models.param.wine.C=range(0.1,1.0,0.1)'```
+```sh
+python main.py --multirun models=logistic_regression datasets=wine 'models.param.wine.C=range(0.1,1.0,0.1)'
+```
 
 This will run an hyperparameter optimization on C parameter of the logistic regression for dataset wine.
 It will create a folder `multirun/` in which you will find logs of all runs and a `optimization_results.yaml` that summarize the result of the Optuna hyperparameters research.
