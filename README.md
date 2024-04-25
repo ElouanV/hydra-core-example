@@ -6,6 +6,22 @@ It does not go deep into the details and so this example does not exploit all th
 For this example:
 
 `pip install -r requirements.txt`
+## Run examples
+```python main.py models=logistic_regression datasets=wine```
+
+will run the script with overriding the parameter `models` and the parameter `datasets`
+
+
+
+
+```python main.py --multirun models=logistic_regression datasets=wine 'models.param.wine.C=range(0.1,1.0,0.1)'```
+
+This will run an hyperparameter optimization on C parameter of the logistic regression for dataset wine.
+It will create a folder `multirun/` in which you will find logs of all runs and a `optimization_results.yaml` that summarize the result of the Optuna hyperparameters research.
+
+Python `logging` library is used and configured automatically by Hydra using `hydra/job_logging/custom.yaml`
+
+
 
 ## Hydra core
 ### Documentation
